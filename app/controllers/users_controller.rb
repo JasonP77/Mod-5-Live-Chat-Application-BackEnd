@@ -1,11 +1,15 @@
 class UsersController < ApplicationController
 	def index
-		user = User.all
-		render json: user
+		users = User.all
+		render json: users, include: :friends
 	end
 
 	def new
 		user = User.new
+	end
+
+	def show
+
 	end
 
 	def create
@@ -18,7 +22,7 @@ class UsersController < ApplicationController
 		token = request.headers["Authentication"]
 		payload = decode(token)
 		user = User.find(payload["user_id"])
-		render json: user
+		render json: user, include: :friends
 	end
 
 end
