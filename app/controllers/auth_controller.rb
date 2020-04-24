@@ -4,6 +4,8 @@ class AuthController < ApplicationController
 		if user && user.authenticate(params["password"])
 			payload = {user_id: user.id}
 			token = encode(payload)
+			friends = {friends: (JSON.parse(user.friends.to_json))}
+			user = JSON.parse(user.to_json).merge(friends)
 			render json: {
 				message: "found user, logging in... ",
 				user_data: user,
