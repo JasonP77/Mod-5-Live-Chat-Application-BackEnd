@@ -6,7 +6,7 @@ class FriendshipsController < ApplicationController
 	end
 def create 
 		user = User.create(username: params[:username], password: params[:password], profile_img: nil)
-		friendships = Friendship.create(user_id: params[:id], friend_id: user.id)
+		friendship = Friendship.create(user_id: params[:user_id], friend_id: params[:friend_id])
 		render json: friendship
 end
 
