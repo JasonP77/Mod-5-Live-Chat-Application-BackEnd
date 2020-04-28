@@ -13,8 +13,18 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		user = User.create(username: params[:username], password: params[:password],  profile_img: nil)
+		user = User.create(user_params)
 		render json: user
+	end
+
+	def edit
+    user = User.find(params[:id])
+  end
+
+	def update
+			user = User.find(params[:id])
+			user.update(user_params)
+			render json: user, include: :friends
 	end
 
 	def chatapp
@@ -24,5 +34,10 @@ class UsersController < ApplicationController
 		user = User.find(payload["user_id"])
 		render json: user, include: :friends
 	end
+
+	private
+  def user_params
+    params.require(:user).permit(:username, :password, :profile_img, :bio)
+  end
 
 end
