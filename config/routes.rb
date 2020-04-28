@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get "/chatapp", to: "users#chatapp"
   resources :chatrooms
   resources :friendships
+  resources :messages
 end

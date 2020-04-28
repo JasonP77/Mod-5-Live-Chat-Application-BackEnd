@@ -5,7 +5,8 @@ class AuthController < ApplicationController
 			payload = {user_id: user.id}
 			token = encode(payload)
 			friends = {friends: (JSON.parse(user.friends.to_json))}
-			user = JSON.parse(user.to_json).merge(friends)
+			chatrooms = {chatrooms: (JSON.parse(user.chatrooms.to_json))}
+			user = JSON.parse(user.to_json).merge(friends).merge(chatrooms)
 			render json: {
 				message: "found user, logging in... ",
 				user_data: user,
@@ -16,7 +17,7 @@ class AuthController < ApplicationController
 			render json: {
 				message: "error, can't log in",
 				error: true
-			}
+			} 
 		end
 	end
 end

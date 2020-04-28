@@ -1,7 +1,7 @@
 class ChatroomsController < ApplicationController
 	def index
 		chatrooms = Chatroom.all
-		render json: chatrooms
+		render json: chatrooms, include: :messages
 	end
 
 
@@ -10,7 +10,7 @@ class ChatroomsController < ApplicationController
 	end
 
 	def create
-		chatroom = Chatroom.create(chatroom_params)
+		chatroom = Chatroom.find_or_create_by(chatroom_params)
 		render json: chatroom
 	end
 
