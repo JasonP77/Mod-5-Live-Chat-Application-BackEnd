@@ -4,8 +4,19 @@ class ChatroomsController < ApplicationController
 		render json: chatrooms
 	end
 
+
+	def new
+		user = User.new
+	end
+
 	def create
-		chatroom = Chatroom.create(title: params[:title], user_id: params[:user_id], friend_id: params[:friend_id])
+		chatroom = Chatroom.create(chatroom_params)
 		render json: chatroom
 	end
+
+	private
+  def chatroom_params
+    params.require(:chatroom).permit(:user_id, :friend_id, :title)
+  end
+
 end

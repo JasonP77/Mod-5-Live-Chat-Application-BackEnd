@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Friendship.destroy_all
+Chatroom.destroy_all
 
 jason = User.create(username: "Jason", password: "password", profile_img: nil, bio: "Gold Fish")
 park = User.create(username: "Park", password: "password", profile_img: "https://i.pinimg.com/474x/fe/64/e9/fe64e9e2f16ced383c0cb69e5f71722d--minion-gif-minion-jokes.jpg")
@@ -16,3 +17,7 @@ park = User.create(username: "Park", password: "password", profile_img: "https:/
 	User.create(username: username[n], password: "password", profile_img: Faker::Avatar.image, bio: Faker::Quote.singular_siegler)
 end
 friendship1 = Friendship.create(user_id: jason.id, friend_id: park.id)
+chatroom1 = Chatroom.create(user_id: jason.id, friend_id: park.id, title: "Title 1")
+
+
+
