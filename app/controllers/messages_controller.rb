@@ -10,6 +10,10 @@ class MessagesController < ApplicationController
 		render json: message
 	end
 
+	def show
+		message = Message.find(params[:id])
+		render json: message
+	end
 
 
 	private

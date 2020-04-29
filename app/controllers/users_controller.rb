@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 	def index
 		users = User.all
-		render json: users, include: [:friends, :chatrooms]
-	
+		render json: users.includes(:friends, :chatrooms, :messages)
+		# , include: {friends: {}, chatrooms: {include: :messages}}
 	end
 
 	def new
@@ -10,7 +10,8 @@ class UsersController < ApplicationController
 	end
 
 	def show
-
+		user = User.find(params[:id])
+		render json: user, include: [:friends, :chatrooms]
 	end
 
 	def create
@@ -33,7 +34,7 @@ class UsersController < ApplicationController
 		token = request.headers["Authentication"]
 		payload = decode(token)
 		user = User.find(payload["user_id"])
-		render json: user, include: [:friends, :chatrooms]
+		render json: user, include: [:friends, :chatrooms, :messages]
 	end
 
 	private
