@@ -16,7 +16,12 @@ class ChatroomsController < ApplicationController
 
 	def show
 		chatroom = Chatroom.find(params[:id])
-		render json: chatroom, include: :messages
+		# render json: chatroom, include: :messages
+		render json: chatroom.to_json(:include => 
+		{:messages => {}, 
+		:users => {}
+	})
+
 	end
 
 	private

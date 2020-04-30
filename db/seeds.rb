@@ -24,5 +24,8 @@ chatroom1 = Chatroom.find_or_create_by(user_id: jason.id, friend_id: park.id, ti
 chatroom2 = Chatroom.find_or_create_by(user_id: jason.id, friend_id: apple.id, title: "Conversation with apple")
 
 message1 = Message.create(user_id: jason.id, chatroom_id: chatroom1.id, content: "Testing")
+message2 = Message.create(user_id: jason.id, chatroom_id: chatroom1.id, content: "Hello")
+message3 = Message.create(user_id: park.id, chatroom_id: chatroom1.id, content: "Good Morning")
+message4 = Message.create(user_id: jason.id, chatroom_id: chatroom2.id, content: "Good Afternoon")
 
 

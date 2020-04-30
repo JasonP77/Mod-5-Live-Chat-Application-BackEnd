@@ -6,7 +6,15 @@ class MessagesController < ApplicationController
 	end
 
 	def create
-		message = Message.create(message_params)
+		message = Message.new(message_params)
+		chatroom = Chatroom.find(message_params["chatroom_id"])
+		if message.save
+				RoomsChannel.broadcast_to(chatroom, {
+					room: chatroom,
+					users: chatroom.users,
+					messages: chatroom.messages
+				})
+		end
 		render json: message
 	end
 

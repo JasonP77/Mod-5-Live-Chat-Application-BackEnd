@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
 	def index
 		users = User.all
-		render json: users.includes(:friends, :chatrooms, :messages)
-		# , include: {friends: {}, chatrooms: {include: :messages}}
+		# render json: users.includes(:friends, :chatrooms, :messages)
+		render json: User.all.to_json(:include => 
+		{:friends => {}, 
+		:chatrooms => 
+		{:include => {:messages => {}}
+		}})
 	end
 
 	def new
