@@ -38,7 +38,12 @@ class UsersController < ApplicationController
 		token = request.headers["Authentication"]
 		payload = decode(token)
 		user = User.find(payload["user_id"])
-		render json: user, include: [:friends, :chatrooms, :messages]
+		# render json: user, include: [:friends, :chatrooms, :messages]
+		render json: user.to_json(:include => 
+		{:friends => {}, 
+		:chatrooms => 
+		{:include => {:messages => {}}
+		}})
 	end
 
 	private

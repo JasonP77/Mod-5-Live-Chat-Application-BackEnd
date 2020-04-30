@@ -10,9 +10,9 @@ Friendship.destroy_all
 Chatroom.destroy_all
 Message.destroy_all
 
-jason = User.create(username: "Jason", password: "password", profile_img: nil, bio: "Gold Fish")
+jason = User.create(username: "Jason", password: "password", profile_img: "https://images.unsplash.com/photo-1489533119213-66a5cd877091?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", bio: "Gold Fish")
 park = User.create(username: "Park", password: "password", profile_img: "https://i.pinimg.com/474x/fe/64/e9/fe64e9e2f16ced383c0cb69e5f71722d--minion-gif-minion-jokes.jpg")
-apple = User.create(username: "apple", password: "password", profile_img: nil, bio: "apple")
+apple = User.create(username: "apple", password: "password", profile_img: "https://oyster.ignimgs.com/mediawiki/apis.ign.com/animal-crossing-new-horizons/6/62/Apple_NewLeaf.png?width=640", bio: "apple")
 50.times do 
 	n = rand(0..5)
 	username = [Faker::Sports::Basketball.player, Faker::Sports::Basketball.coach, Faker::Sports::Football.player, Faker::TvShows::FamilyGuy.character, Faker::TvShows::BreakingBad.character, Faker::TvShows::SouthPark.character]
