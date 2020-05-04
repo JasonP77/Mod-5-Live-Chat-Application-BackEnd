@@ -10,7 +10,7 @@ class ChatroomsController < ApplicationController
 	end
 
 	def create
-		chatroom = Chatroom.find_or_create_by_by(chatroom_params)
+		chatroom = Chatroom.find_or_create_by(chatroom_params)
 		render json: chatroom
 	end
 
