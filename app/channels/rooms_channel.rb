@@ -1,5 +1,6 @@
 class RoomsChannel < ApplicationCable::Channel
-
+  
+  # this file controlls chatrooms and sending and receiving messages
   def subscribed
     @room = Chatroom.find_by(id: params[:chatroom])
     stream_for @room
