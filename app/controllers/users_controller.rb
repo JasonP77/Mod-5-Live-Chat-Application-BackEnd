@@ -33,6 +33,7 @@ class UsersController < ApplicationController
 			render json: user, include: :friends
 	end
 
+	# this method receives encrypted token and decode it
 	def chatapp
 		
 		token = request.headers["Authentication"]
