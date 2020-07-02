@@ -4,6 +4,8 @@ class FriendshipsController < ApplicationController
 		friendships = Friendship.all
 		render json: friendships
 	end
+
+	# this method creates a relationship between two diffrent users
 def create 
 		user = User.create(username: params[:username], password: params[:password], profile_img: nil)
 		friendship = Friendship.create(user_id: params[:user_id], friend_id: params[:friend_id])
