@@ -1,6 +1,6 @@
 class AuthController < ApplicationController
 
-    # this file controlls user authentication and user informations
+    
 	def create
 		user = User.find_by(username: params["username"])
 		if user && user.authenticate(params["password"])
