@@ -23,7 +23,7 @@ class MessagesController < ApplicationController
 		render json: message
 	end
 
-
+	# strong params are used when creating a new message
 	private
   def message_params
     params.require(:message).permit(:user_id, :chatroom_id, :content, :time)
