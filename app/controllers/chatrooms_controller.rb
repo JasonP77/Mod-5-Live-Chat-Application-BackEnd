@@ -1,4 +1,6 @@
 class ChatroomsController < ApplicationController
+
+	# this method will return all chatrooms and messages for that specific chatroom
 	def index
 		chatrooms = Chatroom.all
 		render json: chatrooms, include: :messages
