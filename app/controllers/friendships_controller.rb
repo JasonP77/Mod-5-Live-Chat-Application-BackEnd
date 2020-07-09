@@ -1,5 +1,5 @@
 class FriendshipsController < ApplicationController
-
+#  this method will return all friendships data
 	def index 
 		friendships = Friendship.all
 		render json: friendships
