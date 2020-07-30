@@ -41,11 +41,7 @@ tia = User.create(username: "tia", password: "password", profile_img: "https://v
 
 julian = User.create(username: "julian", password: "password", profile_img: "https://vignette.wikia.nocookie.net/animalcrossing/images/0/00/Julian_HD.png/revision/latest/top-crop/width/360/height/450?cb=20180405151710", bio: "j...u...li..an?")
 
-marina = User.create(username: "marina", password: "password", profile_img: "https://vignette.wikia.nocookie.net/animalcrossing/images/9/96/NH-icon-Marina-00.png/revision/latest?cb=20200224185328", bio: "apple")
 
-bob = User.create(username: "bob", password: "password", profile_img: "https://www.models-resource.com/resources/big_icons/24/23584.png", bio: "Im not Bob Doe")
-
-whitney = User.create(username: "whitney", password: "password", profile_img: "https://www.models-resource.com/resources/big_icons/26/25477.png", bio: "Do you wanna build a snowman?")
 
 
 
