@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-
+	 # this method will render all the messages
 	def index
 		messages = Message.all
 		render json: messages
@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
 		end
 		render json: message
 	end
-	# this will render all the messages.
+	# this will render messages belong to the specific user with the ID
 	def show
 		message = Message.find(params[:id])
 		render json: message
