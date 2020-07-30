@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 	def new
 		user = User.new
 	end
-
+	# this method will render specific user along with friends and chatrooms belong to the user.
 	def show
 		user = User.find(params[:id])
 		render json: user, include: [:friends, :chatrooms]
