@@ -49,19 +49,3 @@ julian = User.create(username: "julian", password: "password", profile_img: "htt
 
 
 
-# 50.times do 
-# 	n = rand(0..5)
-# 	username = [Faker::Sports::Basketball.player, Faker::Sports::Basketball.coach, Faker::Sports::Football.player, Faker::TvShows::FamilyGuy.character, Faker::TvShows::BreakingBad.character, Faker::TvShows::SouthPark.character]
-# 	User.create(username: username[n], password: "password", profile_img: Faker::Avatar.image, bio: Faker::Quote.singular_siegler)
-# end
-# friendship1 = Friendship.create(user_id: jason.id, friend_id: park.id)
-
-# chatroom1 = Chatroom.find_or_create_by(user_id: jason.id, friend_id: park.id, title: "Title 1")
-# chatroom2 = Chatroom.find_or_create_by(user_id: jason.id, friend_id: apple.id, title: "Conversation with apple")
-
-# message1 = Message.create(user_id: jason.id, chatroom_id: chatroom1.id, content: "Testing")
-# message2 = Message.create(user_id: jason.id, chatroom_id: chatroom1.id, content: "Hello")
-# message3 = Message.create(user_id: park.id, chatroom_id: chatroom1.id, content: "Good Morning")
-# message4 = Message.create(user_id: jason.id, chatroom_id: chatroom2.id, content: "Good Afternoon")
-
-
