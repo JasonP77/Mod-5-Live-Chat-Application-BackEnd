@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
 		end
 		render json: message
 	end
-
+	# this will render all the messages.
 	def show
 		message = Message.find(params[:id])
 		render json: message
