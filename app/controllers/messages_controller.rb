@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
 		messages = Message.all
 		render json: messages
 	end
-
+	# this method finds specific chatroom and create a channel
 	def create
 		message = Message.new(message_params)
 		chatroom = Chatroom.find(message_params["chatroom_id"])
