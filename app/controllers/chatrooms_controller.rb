@@ -15,7 +15,7 @@ class ChatroomsController < ApplicationController
 		chatroom = Chatroom.find_or_create_by(chatroom_params)
 		render json: chatroom
 	end
-
+	# this method will render all messages and users that belong to specific chatroom
 	def show
 		chatroom = Chatroom.find(params[:id])
 		# render json: chatroom, include: :messages
