@@ -47,6 +47,7 @@ class UsersController < ApplicationController
 		}})
 	end
 
+	# strong params for users
 	private
   def user_params
     params.require(:user).permit(:username, :password, :profile_img, :bio)
