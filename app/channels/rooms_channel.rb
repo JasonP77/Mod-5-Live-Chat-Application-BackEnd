@@ -7,7 +7,7 @@ class RoomsChannel < ApplicationCable::Channel
 	end
 
   # this method takes care of all the users and messages that are sent and received in the chatroom.
-  
+  # all of the data needs to be in right format in order to make it work properly.
    def received(data)
     RoomsChannel.broadcast_to(@room, {room: @room, user: @room.users, messages: @room.messages})
   end
