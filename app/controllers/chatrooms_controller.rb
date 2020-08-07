@@ -25,7 +25,7 @@ class ChatroomsController < ApplicationController
 	})
 
 	end
-
+	# strong params for chatroom creation and updating
 	private
   def chatroom_params
     params.require(:chatroom).permit(:user_id, :friend_id, :title)
