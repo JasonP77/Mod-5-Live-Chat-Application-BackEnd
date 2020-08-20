@@ -23,6 +23,7 @@ class ChatroomsController < ApplicationController
 		{:messages => {}, 
 		:users => {}
 	})
+	# params[:id] is specified in the url and it needs to be dynamic
 
 	end
 	# strong param for chatroom
