@@ -18,6 +18,7 @@ class MessagesController < ApplicationController
 		render json: message
 	end
 	# this will render messages belong to the specific user with the ID
+	# params id needs to be specified in the url and must be dynamic
 	def show
 		message = Message.find(params[:id])
 		render json: message
