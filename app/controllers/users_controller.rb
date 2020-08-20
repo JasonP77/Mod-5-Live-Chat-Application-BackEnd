@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	# it will show friends, chatrooms and messages belong to the user
 	def index
 		users = User.all
 		# render json: users.includes(:friends, :chatrooms, :messages)
