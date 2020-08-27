@@ -10,6 +10,7 @@ Friendship.destroy_all
 Chatroom.destroy_all
 Message.destroy_all
 
+# below users are pre-made users 
 jason = User.create(username: "Jason", password: "password", profile_img: "https://www.alphafm.com.br/assets/uploads/artistas/jason_mraz_273x340.jpg", bio: "Finally")
 park = User.create(username: "Park", password: "password", profile_img: "https://www.fcgov.com/parks/img/city-park.jpg", bio: "The time is now")
 apple = User.create(username: "apple", password: "password", profile_img: "https://oyster.ignimgs.com/mediawiki/apis.ign.com/animal-crossing-new-horizons/6/62/Apple_NewLeaf.png?width=640", bio: "Hi, Im Apple")
