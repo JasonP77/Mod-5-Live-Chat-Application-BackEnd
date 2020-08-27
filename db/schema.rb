@@ -11,7 +11,8 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2020_04_22_190206) do
-
+  # DO NOT DIRECTLY MODIFY HERE
+  # MUST BE ROLLEDBACK BEFORE MAKING ANY CHANGES
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
