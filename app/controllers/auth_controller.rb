@@ -2,6 +2,7 @@ class AuthController < ApplicationController
 
 		# this file controlls user authentication and user informations
 		# this will show "foudn user....." if succesfully logged in / will show "error, ..." if something goes wrong
+		# double check encoding and decoding
 	def create
 		user = User.find_by(username: params["username"])
 		if user && user.authenticate(params["password"])
