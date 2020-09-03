@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-
+	# key for JWT
 	def secret_key
 		"h3ll0"
 	end
