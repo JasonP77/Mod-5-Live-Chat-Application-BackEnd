@@ -6,11 +6,11 @@ class ChatroomsController < ApplicationController
 		render json: chatrooms, include: :messages
 	end
 
-	# this method will be called when user is created from the front end side
+	# this method will be called when chatroom is created from the front end side
 	def new
 		user = User.new
 	end
-
+	
 	def create
 		chatroom = Chatroom.find_or_create_by(chatroom_params)
 		render json: chatroom
