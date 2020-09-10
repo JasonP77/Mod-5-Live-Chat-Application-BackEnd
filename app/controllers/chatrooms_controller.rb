@@ -11,6 +11,7 @@ class ChatroomsController < ApplicationController
 		user = User.new
 	end
 	
+	# this method will control duplicate chatrooms
 	def create
 		chatroom = Chatroom.find_or_create_by(chatroom_params)
 		render json: chatroom
